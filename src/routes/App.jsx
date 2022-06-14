@@ -3,7 +3,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Layout from '../containers/Layout';
 import Login from '../containers/Login';
 import RecoveryPassword from '../containers/RecoveryPasword';
-import '../styles/global.css'
+import '../styles/global.css';
+import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
 
 const App = () => {
     return(
@@ -11,7 +13,7 @@ const App = () => {
             <Switch>
                 <Layout>
                     <Route exact path="/" component={Home}/>
-                    <Route exact path="/login" component={login}/>
+                    <Route exact path="/login" component={Login}/>
                     <Route exact path="recovery-password" component={RecoveryPassword}/>
                     <Route component={NotFound}/>
                 </Layout>
