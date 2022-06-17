@@ -1,13 +1,13 @@
 import React from 'react';
 
-const OrderItem = () => {
+const OrderItem = ({product}) => {
     return(
         <div class="shopping-cart">
             <figure>
-                <img src="https://images.pexels.com/photos/1715193/pexels-photo-1715193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="bike"/>
+                <img src={product.category.image} alt={product.title}/>
             </figure>
-            <p>Bike</p>
-            <p>$30,00</p>
+            <p>{product.title}</p>
+            <p>${product.price}</p>
         </div>
     );
 }
