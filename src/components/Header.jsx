@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import '../styles/Header.scss';
 import Menu from './Menu';
 import logo from '../../public/assets/logos/logo_yard_sale.svg';
 import menu from '../../public/assets/icons/icon_menu.svg';
-import cart from '../../public/assets/icons/icon_shopping_cart.svg';
+import shopcart from '../../public/assets/icons/icon_shopping_cart.svg';
+import AppContext from '../context/AppContext';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const { state } = useContext(AppContext);
     const handleToggle = () => {
         setToggle(!toggle);
     }
@@ -42,8 +44,8 @@ const Header = () => {
                         platzi@example.com
                     </li>
                     <li className="navbar-shopping-cart">
-                        <img src={cart} alt="shopping cart"/>
-                        <div>2</div>
+                        <img src={shopcart} alt="shopping cart"/>
+                        { state.cart.length > 0 ? <div>{state.cart.length}</div> : null }
                     </li>
                 </ul>
             </div>
